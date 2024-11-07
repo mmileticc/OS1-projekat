@@ -1,0 +1,327 @@
+GAS LISTING /tmp/ccPa3ppn.s 			page 1
+
+
+   1              		.file	"syscall_cpp.cpp"
+   2              		.option pic
+   3              		.option norelax
+   4              		.text
+   5              	.Ltext0:
+   6              		.align	2
+   7              		.globl	_Znwm
+   9              	_Znwm:
+  10              	.LFB2:
+  11              		.file 1 "src/syscall_cpp.cpp"
+   1:src/syscall_cpp.cpp **** //
+   2:src/syscall_cpp.cpp **** // Created by os on 6/22/24.
+   3:src/syscall_cpp.cpp **** //
+   4:src/syscall_cpp.cpp **** #include "../h/syscall_cpp.hpp"
+   5:src/syscall_cpp.cpp **** 
+   6:src/syscall_cpp.cpp **** void *operator new(size_t s) {
+  12              		.loc 1 6 30
+  13              		.cfi_startproc
+  14              	.LVL0:
+  15 0000 130101FF 		addi	sp,sp,-16
+  16              		.cfi_def_cfa_offset 16
+  17 0004 23341100 		sd	ra,8(sp)
+  18 0008 23308100 		sd	s0,0(sp)
+  19              		.cfi_offset 1, -8
+  20              		.cfi_offset 8, -16
+  21 000c 13040101 		addi	s0,sp,16
+  22              		.cfi_def_cfa 8, 0
+   7:src/syscall_cpp.cpp ****     return mem_alloc(s);
+  23              		.loc 1 7 5
+  24              		.loc 1 7 21 is_stmt 0
+  25 0010 97000000 		call	_Z9mem_allocm@plt
+  25      E7800000 
+  26              	.LVL1:
+   8:src/syscall_cpp.cpp **** }
+  27              		.loc 1 8 1
+  28 0018 83308100 		ld	ra,8(sp)
+  29              		.cfi_restore 1
+  30 001c 03340100 		ld	s0,0(sp)
+  31              		.cfi_restore 8
+  32              		.cfi_def_cfa 2, 16
+  33 0020 13010101 		addi	sp,sp,16
+  34              		.cfi_def_cfa_offset 0
+  35 0024 67800000 		jr	ra
+  36              		.cfi_endproc
+  37              	.LFE2:
+  39              		.align	2
+  40              		.globl	_Znam
+  42              	_Znam:
+  43              	.LFB3:
+   9:src/syscall_cpp.cpp **** 
+  10:src/syscall_cpp.cpp **** void *operator new[](size_t s) {
+  44              		.loc 1 10 32 is_stmt 1
+  45              		.cfi_startproc
+  46              	.LVL2:
+  47 0028 130101FF 		addi	sp,sp,-16
+  48              		.cfi_def_cfa_offset 16
+  49 002c 23341100 		sd	ra,8(sp)
+GAS LISTING /tmp/ccPa3ppn.s 			page 2
+
+
+  50 0030 23308100 		sd	s0,0(sp)
+  51              		.cfi_offset 1, -8
+  52              		.cfi_offset 8, -16
+  53 0034 13040101 		addi	s0,sp,16
+  54              		.cfi_def_cfa 8, 0
+  11:src/syscall_cpp.cpp ****     return mem_alloc(s);
+  55              		.loc 1 11 5
+  56              		.loc 1 11 21 is_stmt 0
+  57 0038 97000000 		call	_Z9mem_allocm@plt
+  57      E7800000 
+  58              	.LVL3:
+  12:src/syscall_cpp.cpp **** }
+  59              		.loc 1 12 1
+  60 0040 83308100 		ld	ra,8(sp)
+  61              		.cfi_restore 1
+  62 0044 03340100 		ld	s0,0(sp)
+  63              		.cfi_restore 8
+  64              		.cfi_def_cfa 2, 16
+  65 0048 13010101 		addi	sp,sp,16
+  66              		.cfi_def_cfa_offset 0
+  67 004c 67800000 		jr	ra
+  68              		.cfi_endproc
+  69              	.LFE3:
+  71              		.align	2
+  72              		.globl	_ZdlPv
+  74              	_ZdlPv:
+  75              	.LFB4:
+  13:src/syscall_cpp.cpp **** 
+  14:src/syscall_cpp.cpp **** void operator delete(void *p) noexcept{
+  76              		.loc 1 14 39 is_stmt 1
+  77              		.cfi_startproc
+  78              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+  79              		.cfi_lsda 0x1b,.LLSDA4
+  80              	.LVL4:
+  81 0050 130101FF 		addi	sp,sp,-16
+  82              		.cfi_def_cfa_offset 16
+  83 0054 23341100 		sd	ra,8(sp)
+  84 0058 23308100 		sd	s0,0(sp)
+  85              		.cfi_offset 1, -8
+  86              		.cfi_offset 8, -16
+  87 005c 13040101 		addi	s0,sp,16
+  88              		.cfi_def_cfa 8, 0
+  15:src/syscall_cpp.cpp ****     mem_free(p);
+  89              		.loc 1 15 5
+  90              		.loc 1 15 13 is_stmt 0
+  91 0060 97000000 		call	_Z8mem_freePv@plt
+  91      E7800000 
+  92              	.LVL5:
+  16:src/syscall_cpp.cpp **** }
+  93              		.loc 1 16 1
+  94 0068 83308100 		ld	ra,8(sp)
+  95              		.cfi_restore 1
+  96 006c 03340100 		ld	s0,0(sp)
+  97              		.cfi_restore 8
+  98              		.cfi_def_cfa 2, 16
+  99 0070 13010101 		addi	sp,sp,16
+ 100              		.cfi_def_cfa_offset 0
+GAS LISTING /tmp/ccPa3ppn.s 			page 3
+
+
+ 101 0074 67800000 		jr	ra
+ 102              		.cfi_endproc
+ 103              	.LFE4:
+ 104              		.globl	__gxx_personality_v0
+ 105              		.section	.gcc_except_table,"a",@progbits
+ 106              	.LLSDA4:
+ 107 0000 FF       		.byte	0xff
+ 108 0001 FF       		.byte	0xff
+ 109 0002 03       		.byte	0x3
+ 110 0003 00       		.byte	0
+ 111              		.text
+ 113              		.align	2
+ 114              		.globl	_ZdaPv
+ 116              	_ZdaPv:
+ 117              	.LFB5:
+  17:src/syscall_cpp.cpp **** void operator delete[](void *p) noexcept{
+ 118              		.loc 1 17 41 is_stmt 1
+ 119              		.cfi_startproc
+ 120              		.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
+ 121              		.cfi_lsda 0x1b,.LLSDA5
+ 122              	.LVL6:
+ 123 0078 130101FF 		addi	sp,sp,-16
+ 124              		.cfi_def_cfa_offset 16
+ 125 007c 23341100 		sd	ra,8(sp)
+ 126 0080 23308100 		sd	s0,0(sp)
+ 127              		.cfi_offset 1, -8
+ 128              		.cfi_offset 8, -16
+ 129 0084 13040101 		addi	s0,sp,16
+ 130              		.cfi_def_cfa 8, 0
+  18:src/syscall_cpp.cpp ****     mem_free(p);
+ 131              		.loc 1 18 5
+ 132              		.loc 1 18 13 is_stmt 0
+ 133 0088 97000000 		call	_Z8mem_freePv@plt
+ 133      E7800000 
+ 134              	.LVL7:
+  19:src/syscall_cpp.cpp **** }
+ 135              		.loc 1 19 1
+ 136 0090 83308100 		ld	ra,8(sp)
+ 137              		.cfi_restore 1
+ 138 0094 03340100 		ld	s0,0(sp)
+ 139              		.cfi_restore 8
+ 140              		.cfi_def_cfa 2, 16
+ 141 0098 13010101 		addi	sp,sp,16
+ 142              		.cfi_def_cfa_offset 0
+ 143 009c 67800000 		jr	ra
+ 144              		.cfi_endproc
+ 145              	.LFE5:
+ 146              		.section	.gcc_except_table
+ 147              	.LLSDA5:
+ 148 0004 FF       		.byte	0xff
+ 149 0005 FF       		.byte	0xff
+ 150 0006 03       		.byte	0x3
+ 151 0007 00       		.byte	0
+ 152              		.text
+ 154              	.Letext0:
+ 155              		.file 2 "src/../h/../lib/hw.h"
+ 156              		.file 3 "src/../h/syscall_c.hpp"
+GAS LISTING /tmp/ccPa3ppn.s 			page 4
+
+
+ 842              		.align	3
+ 845              	DW.ref.__gxx_personality_v0:
+ 846 0000 00000000 		.dword	__gxx_personality_v0
+ 846      00000000 
+ 847              		.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04) 9.4.0"
+ 848              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/ccPa3ppn.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 syscall_cpp.cpp
+     /tmp/ccPa3ppn.s:9      .text:0000000000000000 _Znwm
+     /tmp/ccPa3ppn.s:13     .text:0000000000000000 .L0 
+     /tmp/ccPa3ppn.s:15     .text:0000000000000000 .L0 
+     /tmp/ccPa3ppn.s:16     .text:0000000000000004 .L0 
+     /tmp/ccPa3ppn.s:19     .text:000000000000000c .L0 
+     /tmp/ccPa3ppn.s:20     .text:000000000000000c .L0 
+     /tmp/ccPa3ppn.s:22     .text:0000000000000010 .L0 
+     /tmp/ccPa3ppn.s:24     .text:0000000000000010 .L0 
+     /tmp/ccPa3ppn.s:25     .text:0000000000000010 .L0 
+     /tmp/ccPa3ppn.s:28     .text:0000000000000018 .L0 
+     /tmp/ccPa3ppn.s:29     .text:000000000000001c .L0 
+     /tmp/ccPa3ppn.s:31     .text:0000000000000020 .L0 
+     /tmp/ccPa3ppn.s:32     .text:0000000000000020 .L0 
+     /tmp/ccPa3ppn.s:34     .text:0000000000000024 .L0 
+     /tmp/ccPa3ppn.s:36     .text:0000000000000028 .L0 
+     /tmp/ccPa3ppn.s:42     .text:0000000000000028 _Znam
+     /tmp/ccPa3ppn.s:45     .text:0000000000000028 .L0 
+     /tmp/ccPa3ppn.s:47     .text:0000000000000028 .L0 
+     /tmp/ccPa3ppn.s:48     .text:000000000000002c .L0 
+     /tmp/ccPa3ppn.s:51     .text:0000000000000034 .L0 
+     /tmp/ccPa3ppn.s:52     .text:0000000000000034 .L0 
+     /tmp/ccPa3ppn.s:54     .text:0000000000000038 .L0 
+     /tmp/ccPa3ppn.s:56     .text:0000000000000038 .L0 
+     /tmp/ccPa3ppn.s:57     .text:0000000000000038 .L0 
+     /tmp/ccPa3ppn.s:60     .text:0000000000000040 .L0 
+     /tmp/ccPa3ppn.s:61     .text:0000000000000044 .L0 
+     /tmp/ccPa3ppn.s:63     .text:0000000000000048 .L0 
+     /tmp/ccPa3ppn.s:64     .text:0000000000000048 .L0 
+     /tmp/ccPa3ppn.s:66     .text:000000000000004c .L0 
+     /tmp/ccPa3ppn.s:68     .text:0000000000000050 .L0 
+     /tmp/ccPa3ppn.s:74     .text:0000000000000050 _ZdlPv
+     /tmp/ccPa3ppn.s:77     .text:0000000000000050 .L0 
+     /tmp/ccPa3ppn.s:845    .data.rel.local.DW.ref.__gxx_personality_v0:0000000000000000 DW.ref.__gxx_personality_v0
+     /tmp/ccPa3ppn.s:81     .text:0000000000000050 .L0 
+     /tmp/ccPa3ppn.s:82     .text:0000000000000054 .L0 
+     /tmp/ccPa3ppn.s:85     .text:000000000000005c .L0 
+     /tmp/ccPa3ppn.s:86     .text:000000000000005c .L0 
+     /tmp/ccPa3ppn.s:88     .text:0000000000000060 .L0 
+     /tmp/ccPa3ppn.s:90     .text:0000000000000060 .L0 
+     /tmp/ccPa3ppn.s:91     .text:0000000000000060 .L0 
+     /tmp/ccPa3ppn.s:94     .text:0000000000000068 .L0 
+     /tmp/ccPa3ppn.s:95     .text:000000000000006c .L0 
+     /tmp/ccPa3ppn.s:97     .text:0000000000000070 .L0 
+     /tmp/ccPa3ppn.s:98     .text:0000000000000070 .L0 
+     /tmp/ccPa3ppn.s:100    .text:0000000000000074 .L0 
+     /tmp/ccPa3ppn.s:102    .text:0000000000000078 .L0 
+     /tmp/ccPa3ppn.s:116    .text:0000000000000078 _ZdaPv
+     /tmp/ccPa3ppn.s:119    .text:0000000000000078 .L0 
+     /tmp/ccPa3ppn.s:123    .text:0000000000000078 .L0 
+     /tmp/ccPa3ppn.s:124    .text:000000000000007c .L0 
+     /tmp/ccPa3ppn.s:127    .text:0000000000000084 .L0 
+     /tmp/ccPa3ppn.s:128    .text:0000000000000084 .L0 
+     /tmp/ccPa3ppn.s:130    .text:0000000000000088 .L0 
+     /tmp/ccPa3ppn.s:132    .text:0000000000000088 .L0 
+     /tmp/ccPa3ppn.s:133    .text:0000000000000088 .L0 
+GAS LISTING /tmp/ccPa3ppn.s 			page 6
+
+
+     /tmp/ccPa3ppn.s:136    .text:0000000000000090 .L0 
+     /tmp/ccPa3ppn.s:137    .text:0000000000000094 .L0 
+     /tmp/ccPa3ppn.s:139    .text:0000000000000098 .L0 
+     /tmp/ccPa3ppn.s:140    .text:0000000000000098 .L0 
+     /tmp/ccPa3ppn.s:142    .text:000000000000009c .L0 
+     /tmp/ccPa3ppn.s:144    .text:00000000000000a0 .L0 
+     /tmp/ccPa3ppn.s:157    .text:00000000000000a0 .L0 
+     /tmp/ccPa3ppn.s:434    .debug_abbrev:0000000000000000 .Ldebug_abbrev0
+     /tmp/ccPa3ppn.s:801    .debug_str:00000000000000c2 .LASF30
+     /tmp/ccPa3ppn.s:775    .debug_str:000000000000000e .LASF31
+     /tmp/ccPa3ppn.s:831    .debug_str:0000000000000246 .LASF32
+     /tmp/ccPa3ppn.s:5      .text:0000000000000000 .Ltext0
+     /tmp/ccPa3ppn.s:154    .text:00000000000000a0 .Letext0
+     /tmp/ccPa3ppn.s:771    .debug_line:0000000000000000 .Ldebug_line0
+     /tmp/ccPa3ppn.s:805    .debug_str:0000000000000194 .LASF0
+     /tmp/ccPa3ppn.s:797    .debug_str:00000000000000a3 .LASF1
+     /tmp/ccPa3ppn.s:791    .debug_str:000000000000007d .LASF2
+     /tmp/ccPa3ppn.s:783    .debug_str:000000000000003e .LASF4
+     /tmp/ccPa3ppn.s:795    .debug_str:0000000000000091 .LASF3
+     /tmp/ccPa3ppn.s:777    .debug_str:0000000000000022 .LASF5
+     /tmp/ccPa3ppn.s:833    .debug_str:0000000000000264 .LASF6
+     /tmp/ccPa3ppn.s:787    .debug_str:000000000000005b .LASF7
+     /tmp/ccPa3ppn.s:811    .debug_str:00000000000001b6 .LASF8
+     /tmp/ccPa3ppn.s:781    .debug_str:0000000000000030 .LASF9
+     /tmp/ccPa3ppn.s:837    .debug_str:000000000000027d .LASF10
+     /tmp/ccPa3ppn.s:789    .debug_str:000000000000006e .LASF11
+     /tmp/ccPa3ppn.s:823    .debug_str:0000000000000218 .LASF12
+     /tmp/ccPa3ppn.s:815    .debug_str:00000000000001dc .LASF13
+     /tmp/ccPa3ppn.s:799    .debug_str:00000000000000b6 .LASF14
+     /tmp/ccPa3ppn.s:785    .debug_str:0000000000000045 .LASF15
+     /tmp/ccPa3ppn.s:813    .debug_str:00000000000001c6 .LASF16
+     /tmp/ccPa3ppn.s:809    .debug_str:00000000000001b1 .LASF17
+     /tmp/ccPa3ppn.s:819    .debug_str:00000000000001f5 .LASF18
+     /tmp/ccPa3ppn.s:779    .debug_str:0000000000000029 .LASF20
+     /tmp/ccPa3ppn.s:117    .text:0000000000000078 .LFB5
+     /tmp/ccPa3ppn.s:145    .text:00000000000000a0 .LFE5
+     /tmp/ccPa3ppn.s:702    .debug_loc:0000000000000000 .LLST3
+     /tmp/ccPa3ppn.s:134    .text:0000000000000090 .LVL7
+     /tmp/ccPa3ppn.s:807    .debug_str:00000000000001a1 .LASF19
+     /tmp/ccPa3ppn.s:825    .debug_str:0000000000000228 .LASF21
+     /tmp/ccPa3ppn.s:75     .text:0000000000000050 .LFB4
+     /tmp/ccPa3ppn.s:103    .text:0000000000000078 .LFE4
+     /tmp/ccPa3ppn.s:716    .debug_loc:0000000000000039 .LLST2
+     /tmp/ccPa3ppn.s:92     .text:0000000000000068 .LVL5
+     /tmp/ccPa3ppn.s:821    .debug_str:0000000000000208 .LASF22
+     /tmp/ccPa3ppn.s:793    .debug_str:000000000000008b .LASF24
+     /tmp/ccPa3ppn.s:43     .text:0000000000000028 .LFB3
+     /tmp/ccPa3ppn.s:69     .text:0000000000000050 .LFE3
+     /tmp/ccPa3ppn.s:730    .debug_loc:0000000000000072 .LLST1
+     /tmp/ccPa3ppn.s:58     .text:0000000000000040 .LVL3
+     /tmp/ccPa3ppn.s:827    .debug_str:000000000000022f .LASF23
+     /tmp/ccPa3ppn.s:835    .debug_str:0000000000000277 .LASF25
+     /tmp/ccPa3ppn.s:10     .text:0000000000000000 .LFB2
+     /tmp/ccPa3ppn.s:37     .text:0000000000000028 .LFE2
+     /tmp/ccPa3ppn.s:744    .debug_loc:00000000000000ab .LLST0
+     /tmp/ccPa3ppn.s:26     .text:0000000000000018 .LVL1
+     /tmp/ccPa3ppn.s:773    .debug_str:0000000000000000 .LASF26
+GAS LISTING /tmp/ccPa3ppn.s 			page 7
+
+
+     /tmp/ccPa3ppn.s:817    .debug_str:00000000000001ec .LASF28
+     /tmp/ccPa3ppn.s:803    .debug_str:0000000000000186 .LASF27
+     /tmp/ccPa3ppn.s:829    .debug_str:000000000000023c .LASF29
+     /tmp/ccPa3ppn.s:122    .text:0000000000000078 .LVL6
+     /tmp/ccPa3ppn.s:80     .text:0000000000000050 .LVL4
+     /tmp/ccPa3ppn.s:46     .text:0000000000000028 .LVL2
+     /tmp/ccPa3ppn.s:14     .text:0000000000000000 .LVL0
+     /tmp/ccPa3ppn.s:158    .debug_info:0000000000000000 .Ldebug_info0
+     /tmp/ccPa3ppn.s:106    .gcc_except_table:0000000000000000 .LLSDA4
+     /tmp/ccPa3ppn.s:147    .gcc_except_table:0000000000000004 .LLSDA5
+
+UNDEFINED SYMBOLS
+_Z9mem_allocm
+_Z8mem_freePv
+__gxx_personality_v0
